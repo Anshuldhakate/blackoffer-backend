@@ -2,10 +2,12 @@ const express= require("express")
 const connection= require("./data")
 const fs = require("fs");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const app= express();
 
-app.use(express.json())
+app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res)=>{
     res.send("Welcome")
